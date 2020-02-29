@@ -18,6 +18,15 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '../src/index.html'))
 });
 
+app.get('/users', function(req, res){
+  // sample api mock data
+  res.json([
+    {"id": 1,"firstName":"Kelsey","lastName":"Grammar","email":"bob@gmail.com"},
+    {"id": 1,"firstName":"Tim","lastName":"Allen","email":"TimA@yahoo.com"},
+    {"id": 1,"firstName":"Keith","lastName":"Floyd","email":"KeithF@wineAndDine.com"}
+  ]);
+});
+
 app.listen(port, function(err){
   if (err) {
     console.log(err);
